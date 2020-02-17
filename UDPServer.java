@@ -15,5 +15,10 @@ public class UDPServer {
 
   public static class Server {
   
+    private ServerSocket server = null;
+    private Socket socket = null;
+    private DataInputStream input = null;
+    private DataOutputStream output = null;
+    
     }
 }
