@@ -22,6 +22,7 @@ public class UDPServer {
 	private static DateFormat startdf;
 	private static DateFormat startTimedf;
 
+	//Sets the port that we have(2015) to socket, loads quote file and has date format and output
     public static void main(String[] args) throws Exception {
         socket = new DatagramSocket(2015);
         loadQuotesFromFile("quote.csv");
@@ -35,6 +36,7 @@ public class UDPServer {
         service();
     }
 
+	
     private static void service() throws IOException {
         while (true) {
             byte[] buffer = new byte[512];
@@ -44,10 +46,12 @@ public class UDPServer {
             int clientPort = request.getPort();
             String dateString = recieveddf.format(new Date()).toString();
 
+		//Outputs resuld when you recieved the request
             System.out.println("Request recieved from " + clientAddress.toString() + ": " + clientPort + " " + dateString);
 
             String recievedCommand = new String(buffer, 0, request.getLength());
 
+		//Checks to see if the <REQUESTCOMMAND> command was used, if so sends quote
             if (recievedCommand.equals(requestCommand)) {
                 String quote = getRandomQuote();
 
