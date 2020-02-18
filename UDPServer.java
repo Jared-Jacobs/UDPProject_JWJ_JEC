@@ -19,12 +19,19 @@ public class UDPServer {
     private static Random random;
     private static final String requestCommand = "<REQUESTQUOTE>";
     private static DateFormat recieveddf;
+	private static DateFormat startdf;
+	private static DateFormat startTimedf;
 
     public static void main(String[] args) throws Exception {
         socket = new DatagramSocket(2015);
         loadQuotesFromFile("quote.csv");
         random = new Random();
+		startTimedf = new SimpleDateFormat("hh:mmaa");
+		startdf = new SimpleDateFormat("MMMM dd, yyyy");
         recieveddf = new SimpleDateFormat("MM/dd/yyyy hh:mmaa");
+		String dateString = startTimedf.format(new Date()) + " on ";
+		dateString += startdf.format(new Date());
+		System.out.println("Server started at " + dateString);
         service();
     }
 
