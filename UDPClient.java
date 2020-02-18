@@ -6,6 +6,7 @@ public class UDPClient {
 
     private static final String endCommand = "<END>";
 
+    //Prints out the syntax for the user
     public static void main(String[] args) {
         if (args.length < 2) {
             System.out.println("Syntax: UDPClient <ip> <port>");
