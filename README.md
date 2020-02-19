@@ -1,15 +1,23 @@
 Jared-
+
 -Added 10 more quotes to the quote.csv and uploaded the 20 total to GitHub.
+
 -Created and got started on the UDPServer.java imported vital imports for later use.
+
 -Worked on How To Run in README.
+
 -Formatted the date correctly as in the requirements.
+
 -Added comments where needed.
 
 
 
 Josh-
+
 -Started on UDPServer and UDPClient getting majority of it completed have a quote print every 10 seconds, need to have them interact with <REQUESTQUOTE> command
+
 -Worked on UDPClient interacting with UDPServer.
+
 -Got the date working, just need it formatted correctly.
 
 
